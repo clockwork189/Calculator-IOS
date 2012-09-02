@@ -13,8 +13,7 @@
 @synthesize display;
 
 - (IBAction)digitPressed:(UIButton *)sender {
-    NSString *digit = [sender currentTitle];
-    NSLog(@"The Button pressed was %@", digit);
+    self.display.text = [self.display.text stringByAppendingFormat:sender.currentTitle];
 }
 
 @end

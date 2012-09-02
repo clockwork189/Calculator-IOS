@@ -29,4 +29,10 @@
 
 }
 
+- (IBAction)enterPressed {
+}
+
+- (IBAction)operationPressed:(UIButton *)sender {
+}
+
 @end

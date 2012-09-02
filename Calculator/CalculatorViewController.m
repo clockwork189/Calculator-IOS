@@ -8,12 +8,25 @@
 
 #import "CalculatorViewController.h"
 
+@interface CalculatorViewController()
+@property (nonatomic) BOOL userInTheMiddleOfEnteringNumber; 
+@end
+
+
+
 @implementation CalculatorViewController
 
 @synthesize display;
+@synthesize userInTheMiddleOfEnteringNumber;
 
 - (IBAction)digitPressed:(UIButton *)sender {
-    self.display.text = [self.display.text stringByAppendingFormat:sender.currentTitle];
+    if(self.userInTheMiddleOfEnteringNumber) {
+        self.display.text = [self.display.text stringByAppendingFormat:sender.currentTitle];
+    } else {
+        self.display.text = sender.currentTitle;
+        self.userInTheMiddleOfEnteringNumber = YES;
+    }
+
 }
 
 @end
